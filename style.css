@@ -1,0 +1,261 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favor of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+:root {
+  /* Primary */
+  --Blue: hsl(223, 87%, 63%);
+  /* Secondary */
+  --PaleBlue: hsl(223, 100%, 88%);
+  --LightRed: hsl(354, 100%, 66%);
+  /* Neutral */
+  --Gray: hsl(0, 0%, 59%);
+  --VeryDarkBlue: hsl(209, 33%, 12%);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 375px;
+  font-family: "Libre Franklin", sans-serif;
+  text-align: center;
+  min-height: 100vh;
+  line-height: 1.5;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* Styling for anchor elements without a class */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+  margin-bottom: 2rem;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Ensure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Provide extra scroll margin for anchored elements */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* notify-me */
+label {
+  display: block;
+  width: 100%;
+  color: white;
+  font-weight: 600;
+  margin: 0 auto 4rem;
+  padding: 1rem;
+  background-color: var(--Blue);
+  border: none;
+  border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+input {
+  display: block;
+  width: 375px;
+  color: black;
+  font-weight: 300;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  text-align: left;
+  background: none;
+  border: 1px solid var(--PaleBlue);
+  border-radius: 50px;
+  outline: none;
+}
+
+input::placeholder {
+  color: var(--PaleBlue);
+}
+
+/* Social media icons */
+.fa-x-twitter,
+.fa-instagram {
+  border: 1px solid var(--PaleBlue);
+  border-radius: 50px;
+  margin-right: 1rem;
+  padding: 0.5rem;
+  color: var(--Blue);
+}
+
+.fa-facebook-f {
+  border: 1px solid var(--PaleBlue);
+  border-radius: 50px;
+  margin-right: 1rem;
+  padding: 0.5rem 0.7rem;
+  color: var(--Blue);
+}
+
+.fa-x-twitter:hover,
+.fa-instagram:hover,
+.fa-facebook-f:hover {
+  cursor: pointer;
+  color: white;
+  background-color: var(--Blue);
+  border-color: var(--Blue);
+}
+
+/* Styling for specific elements */
+span {
+  color: var(--Gray);
+}
+
+.sub {
+  margin-bottom: 3rem;
+  font-size: 1rem;
+}
+
+.launch {
+  font-size: clamp(1rem, 6vw, 3rem); /* Adjust the values as needed */
+  width: 100%;
+}
+
+label:hover {
+  background-color: var(--PaleBlue);
+  cursor: pointer;
+}
+
+footer {
+  position: fixed;
+  bottom: 1rem;
+}
+
+.error-message {
+  margin: 10px 0;
+  color: var(--LightRed);
+  font-size: smaller;
+  font-style: italic;
+}
+
+/* Media query for dark mode */
+@media (prefers-color-scheme: dark) {
+}
+
+/* Media query for larger screens */
+@media (min-width: 640px) {
+  body {
+    min-width: 1000px;
+  }
+
+  .desktop {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .slack {
+    width: 90%;
+    display: block;
+    margin: 4rem 0;
+  }
+
+  input {
+    display: block;
+    width: 90%;
+    padding: 0.8rem;
+  }
+
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* notify-me */
+  label {
+    margin: 0;
+    width: 30%;
+  }
+
+  .error-message {
+    bottom: 0;
+  }
+
+  footer {
+    position: relative;
+  }
+}
